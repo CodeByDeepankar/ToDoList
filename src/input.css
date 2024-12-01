@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg{
+    background-image: url(/images/bg.jpg);
+}
+
+.bg-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.to-do-list {
+  width: 90%;
+  max-width: 400px;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: -25px;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(/images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(/images/checked.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  margin-right: 40px;
+}
+
+ul li span:hover {
+  background-color: #7b7b7b68;
+  border-radius: 8px;
+}
+
+@media (max-width: 480px) {
+  .to-do-list {
+    padding: 0.75rem;
+    max-width: 300px;
+  }
+
+  .to-do-list h2 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .w-14 {
+    width: 50px;
+    height: 50px;
+  }
+}

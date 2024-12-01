@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./input.css" />
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div
+      class="bg bg-cover bg-no-repeat h-screen w-screen flex justify-center items-center"
+    >
+      <div
+        class="to-do-list w-96 backdrop-blur-[0.5rem] shadow-lg rounded-lg text-2xl max-h-full"
+      >
+        <div class="flex m-2 items-center gap-3 mb-4 justify-center text-white">
+          <h2 class="font-medium">To Do List</h2>
+          <img width="50px" src="/images/icon.png" alt="" />
+        </div>
+        <div class="flex justify-center">
+          <div
+            class="relative rounded-full overflow-hidden bg-purple-100 shadow-xl w-80"
+          >
+            <input
+              class="text-black bg-transparent outline-none border-none pl-6 pr-10 py-5 w-full font-sans text-lg font-semibold"
+              id="input-box"
+              placeholder="Add task..."
+              name="text"
+              type="text"
+            />
+            <div class="absolute right-2 top-[6px]">
+              <button
+                onclick="addTask()"
+                class="w-14 h-14 rounded-full bg-violet-500 group shadow-xl flex items-center justify-center relative overflow-hidden"
+              >
+                <svg
+                  class="relative z-10"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 64 64"
+                  height="50"
+                  width="50"
+                >
+                  <path
+                    fill-opacity="0.01"
+                    fill="white"
+                    d="M63.6689 29.0491L34.6198 63.6685L0.00043872 34.6194L29.0496 1.67708e-05L63.6689 29.0491Z"
+                  ></path>
+                  <path
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="3.76603"
+                    stroke="white"
+                    d="M42.8496 18.7067L21.0628 44.6712"
+                  ></path>
+                  <path
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke-width="3.76603"
+                    stroke="white"
+                    d="M26.9329 20.0992L42.85 18.7067L44.2426 34.6238"
+                  ></path>
+                </svg>
+                <div
+                  class="w-full h-full rotate-45 absolute left-[32%] top-[32%] bg-black group-hover:-left-[100%] group-hover:-top-[100%] duration-1000"
+                ></div>
+                <div
+                  class="w-full h-full -rotate-45 absolute -left-[32%] -top-[32%] group-hover:left-[100%] group-hover:top-[100%] bg-black duration-1000"
+                ></div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <ul
+          class="flex flex-col ml-20 mt-3 text-xl justify-center text-white"
+          id="list-container"
+        ></ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
